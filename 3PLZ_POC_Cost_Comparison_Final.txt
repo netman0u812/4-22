@@ -1,0 +1,125 @@
+
+PROJECTED COST ANALYSIS
+Third-Party Landing Zone (3PLZ) Proof of Concept
+WTIT / F5 Distributed Cloud vs. Cloudflare
+Perspective: Delivered Self-Service Secure Access Platform
+
+---
+
+EXECUTIVE FRAMING
+
+The Third-Party Landing Zone (3PLZ) Proof of Concept (POC) is not a feature demonstration. It is an architectural and operational validation whose outputs are explicitly required to form the foundation of a self-service secure access platform targeted for delivery by September 30. As defined in both vendor POC deliverables, the evaluation criteria require not only functional capability, but deterministic multi-tenant isolation, lifecycle automation, audit defensibility, and API-expressed engineering workflows suitable for direct portal integration.
+
+Because of this framing, cost comparisons must be normalized to a common unit of value: a *delivered*, self-service-ready platform. Any comparison that treats one solution as a delivered outcome and the other as raw SaaS consumption is structurally invalid.
+
+This document establishes that normalization explicitly and provides a defensible cost projection for both WTIT/F5 Distributed Cloud and Cloudflare under equivalent delivery assumptions.
+
+---
+
+CLOUDFARE COST – PLATFORM CONSUMPTION VS. DELIVERED SOLUTION
+
+Cloudflare pricing, in its native form, represents platform consumption only. This includes access to Cloudflare’s edge, Zero Trust, Gateway, DNS, and proxy capabilities, but it explicitly does not include:
+
+• Tenant lifecycle automation
+• Self-service provisioning and offboarding
+• API-orchestrated workflows matching EW-01 through EW-05
+• Deterministic residual state cleanup
+• Credential vault integration
+• Portal-ready abstractions and guardrails
+
+The Cloudflare POC deliverables make this distinction explicit. Cloudflare is evaluated as a capability provider whose primitives must be composed and operationalized by a systems integrator. The deliverables explicitly require the integrator to produce engineering workflows and API specifications that form the foundation of the subsequent self-service portal.
+
+In other words, Cloudflare alone does not deliver a self-service platform. It delivers components from which one must be built.
+
+Any Cloudflare cost figure that does not include integration and self-service delivery must therefore be labeled accurately as *Cloudflare platform consumption only*.
+
+---
+
+CLOUDFARE DELIVERY UPLIFT – WHY IT IS REQUIRED
+
+The POC requirements mandate more than configuration:
+
+• Per-tenant mTLS CA isolation, potentially requiring engineered constructs
+• Per-tenant DNS listeners and rewriting for inbound and outbound traffic
+• Per-tenant governed egress with strict isolation and audit
+• Deterministic tenant provisioning and offboarding with zero residual state
+• Acceptance test execution gating tenant activation
+• Fully documented, API-expressed workflows suitable for portal automation
+
+The POC documentation explicitly identifies per-tenant CA isolation (CR-01) as a structural challenge for Cloudflare and requires disclosure of whether isolation is native or engineered. Engineered constructs introduce both delivery effort and long-term operational risk, which must be reflected in cost modeling.
+
+Because Cloudflare does not natively deliver these outcomes as a product, a delivery uplift is mandatory to normalize Cloudflare to a delivered platform comparable to WTIT.
+
+---
+
+CLOUDFARE 25-TENANT COST PROJECTION (DELIVERED)
+
+Base Cloudflare platform consumption cost for a 25-tenant 3PLZ-equivalent footprint (excluding internet-facing WAF, which is out of POC scope):
+
+• Cloudflare Platform (25 tenants): ~$300,000 / year
+
+To represent delivery of POC-mandated self-service and integration artifacts, a 35% delivery uplift is applied:
+
+• Delivery uplift (35%): ~$105,000 / year
+
+Resulting delivered Cloudflare cost:
+
+• Cloudflare Delivered Platform (25 tenants): ~$405,000 / year
+
+Normalized per-tenant cost:
+
+• ~$16,200 per tenant per year
+
+This figure represents Cloudflare transformed into a governed, portal-ready multi-tenant platform—not raw SaaS.
+
+---
+
+WTIT / F5 DISTRIBUTED CLOUD COST – DELIVERED PLATFORM BY DESIGN
+
+WTIT’s pricing model is fundamentally different. The WTIT proposal is structured as delivered outcome pricing, not platform consumption pricing.
+
+Key characteristics:
+
+• Fixed-fee POC engagement
+• Hosted infrastructure
+• Integrated platform composition (Cloud.Red)
+• Lifecycle automation baked into the service
+• Operational workflows delivered as part of the engagement
+
+WTIT pricing already internalizes integration, automation, and operationalization. Therefore, no additional delivery uplift is required to compare WTIT with Cloudflare Delivered Platform costs.
+
+WTIT pricing relevant to a 25-tenant baseline:
+
+• POC fixed fee: $500,000 list
+• Post-POC base platform (supports up to 25 tenants): $1,000,000 / year list
+
+Applying a conservative 30% enterprise negotiation assumption:
+
+• Effective POC cost: ~$350,000
+• Effective annual platform cost (25 tenants): ~$700,000
+
+Normalized per-tenant cost:
+
+• ~$28,000 per tenant per year
+
+This includes platform, operations, lifecycle automation, and audit readiness by design.
+
+---
+
+NORMALIZED COMPARISON – 25 TENANTS (DELIVERED)
+
+• Cloudflare Delivered Platform (35% uplift): ~$405,000 / year
+• WTIT Delivered Platform (post-negotiation): ~$700,000 / year
+
+The remaining delta is not about capability coverage—it is about risk allocation.
+
+Cloudflare’s economic advantage exists only if engineered constructs (particularly for CR-01) prove structurally sound, supportable, and automation-safe at scale.
+
+WTIT’s higher cost purchases certainty: native tenant separation, baked-in lifecycle workflows, and reduced integration and operational risk.
+
+---
+
+FINAL POSITION (BULLET-PROOF STATEMENT)
+
+Cloudflare platform pricing does not include self-service capabilities or integration delivery. To compare Cloudflare fairly with WTIT’s delivered platform offering, an explicit delivery uplift is required to account for tenant lifecycle automation, workflow orchestration, and portal foundation artifacts mandated by the 3PLZ POC. Using a 35% uplift is a conservative and defensible assumption grounded directly in the POC requirements. Comparing un-uplifted Cloudflare platform consumption costs to WTIT delivered platform pricing is not an apples-to-apples comparison and is invalid for decision-making.
+
